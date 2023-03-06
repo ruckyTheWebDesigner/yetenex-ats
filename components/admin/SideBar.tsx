@@ -1,6 +1,6 @@
 "use client";
 
-import { AppBar, ListItemButton, ListItemIcon } from "@mui/material";
+import { AppBar, Box, ListItemButton, ListItemIcon } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -12,6 +12,7 @@ import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
 import { HiDocumentReport } from "react-icons/hi";
 import { MdDashboard, MdOutlineAssessment } from "react-icons/md";
 import { BsInfoLg } from "react-icons/bs";
+import { IoIosDesktop } from "react-icons/io";
 
 type CollapseProps = {
   title: string;
@@ -109,12 +110,17 @@ const collapseItemsList = [
 
 function SideBar() {
   return (
-    <div className='h-screen overflow-auto bg-[#EDF1D6] shadow-sm min-w-full relative'>
+    <Box
+      // sx={{
+      //   backgroundColor: "secondary.main",
+      //   color: "white",
+      // }}
+      className='min-h-screen bg-[#EDF1D6] overflow-auto shadow-sm relative'>
       <div className='space-y-8'>
         <div className='py-5 lg:py-6 px-4 lg:px-6 font-bold text-2xl'>LOGO</div>
         <div className='px-4 space-y-4 lg:space-y-5'>
           <Link href={"/admin/dashboard"}>
-            <ListItem title='Dashboard' icon={<MdDashboard size={20} />} />
+            <ListItem title='Dashboard' icon={<IoIosDesktop size={20} />} />
           </Link>
 
           {collapseItemsList.map((item, index) => {
@@ -142,7 +148,7 @@ function SideBar() {
         </div>
       </div>
 
-      <div className='border-t-2 absolute bottom-0'>
+      <div className='border-t-2 fixed bottom-0'>
         <div className='flex items-center justify-between px-4 lg:px-6 py-5 lg:py-6'>
           <div className='flex items-center space-x-4'>
             <CustomAvatar
@@ -161,7 +167,7 @@ function SideBar() {
           </div>
         </div>
       </div>
-    </div>
+    </Box>
   );
 }
 

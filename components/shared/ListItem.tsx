@@ -11,7 +11,7 @@ type ListItemProps = {
 function ListItem({ title, icon }: ListItemProps) {
   return (
     <ListItemButton>
-      <ListItemIcon>{icon && icon}</ListItemIcon>
+      <ListItemIcon>{icon ? icon : null}</ListItemIcon>
       <ListItemText primary={title} />
     </ListItemButton>
   );

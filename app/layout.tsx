@@ -1,13 +1,8 @@
 "use client";
-
+import "@tremor/react/dist/esm/tremor.css";
 import "./globals.css";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-
-// export const metadata = {
-//   title: "Custom Next.js App",
-//   description: "A custom Next.js app",
-// };
 
 const theme = createTheme({
   palette: {
@@ -28,6 +23,16 @@ const theme = createTheme({
       primary: "#0f172a",
       secondary: "#0f172a",
       disabled: "#000",
+    },
+  },
+
+  components: {
+    MuiBadge: {
+      styleOverrides: {
+        badge: {
+          color: "#fff",
+        },
+      },
     },
   },
 });

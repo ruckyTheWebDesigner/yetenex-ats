@@ -4,14 +4,17 @@ import Search from "./Search";
 
 import AppBar from "@mui/material/AppBar";
 
-import { BiMenu } from "react-icons/bi";
+import { BiMenu, BiBell } from "react-icons/bi";
+import Badge from "../shared/Badge";
+import Tooltip from "../shared/Tooltip";
 
 import {
   AiOutlineMail,
   AiOutlineCalendar,
   AiOutlineVideoCameraAdd,
 } from "react-icons/ai";
-import { BiBell } from "react-icons/bi";
+
+import { RiArrowDropDownLine } from "react-icons/ri";
 import { Drawer } from "@mui/material";
 import CustomAvatar from "../shared/Avatar";
 import SideBar from "./SideBar";
@@ -83,30 +86,54 @@ function DesktopAppbBar() {
           <Search />
         </div>
 
-        <div>
-          <div className='flex items-center gap-2 lg:gap-3'>
-            <div className='p-2 border border-primary rounded-full hover:bg-slate-100 transition-all'>
-              <AiOutlineMail
-                size={20}
-                className='text-gray-600 cursor-pointer'
-              />
-            </div>
-            <div className='p-2 border border-primary rounded-full hover:bg-slate-100 transition-all'>
-              <BiBell size={20} className='text-gray-600 cursor-pointer' />
-            </div>
-            <div className='p-2 border border-primary rounded-full hover:bg-slate-100 transition-all'>
-              <AiOutlineCalendar
-                size={20}
-                className='text-gray-600 cursor-pointer'
-              />
-            </div>
-            <div className='p-2 border border-primary rounded-full hover:bg-slate-100 transition-all'>
-              <AiOutlineVideoCameraAdd
-                size={20}
-                className='text-gray-600 cursor-pointer'
-              />
-            </div>
+        <div className='flex items-center gap-10 lg:gap-12'>
+          <div className='flex items-center gap-6'>
+            <Tooltip title='Inbox'>
+              <Badge badgeContent={4} color='primary'>
+                <AiOutlineMail
+                  size={25}
+                  className='text-gray-600 cursor-pointer'
+                />
+              </Badge>
+            </Tooltip>
+            <Tooltip title='Notifications'>
+              <Badge badgeContent={10} max={10} color='primary'>
+                <BiBell size={25} className='text-gray-600 cursor-pointer' />
+              </Badge>
+            </Tooltip>
+            <Tooltip title='Calendar'>
+              <Badge badgeContent={4} color='primary'>
+                <AiOutlineCalendar
+                  size={25}
+                  className='text-gray-600 cursor-pointer'
+                />
+              </Badge>
+            </Tooltip>
+            <Tooltip title='Video Tutorials'>
+              <Badge badgeContent={4} color='primary'>
+                <AiOutlineVideoCameraAdd
+                  size={25}
+                  className='text-gray-600 cursor-pointer'
+                />
+              </Badge>
+            </Tooltip>
           </div>
+
+          <Tooltip title='settings'>
+            <div className='flex items-center space-x-1 cursor-pointer'>
+              <CustomAvatar
+                sx={{
+                  width: 35,
+                  height: 35,
+                }}
+                src={
+                  "https://images.pexels.com/photos/943235/pexels-photo-943235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                }
+              />
+
+              <RiArrowDropDownLine size={20} className='text-primary' />
+            </div>
+          </Tooltip>
         </div>
       </div>
     </div>
