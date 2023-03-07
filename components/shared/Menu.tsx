@@ -6,11 +6,12 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 type Props = {
   items?: any[];
   onItemClick?: (e: any) => void;
-  title?: string;
+  title?: string | React.ReactNode;
   icon?: React.ReactNode;
+  children?: React.ReactNode;
 };
 
-function CustomMenu({ items, onItemClick, title, icon }: Props) {
+function CustomMenu({ items, onItemClick, title, icon, children }: Props) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -36,7 +37,7 @@ function CustomMenu({ items, onItemClick, title, icon }: Props) {
           onClick={handleClick}
           aria-expanded={open ? "true" : undefined}>
           {title ? (
-            <span className='flex items-center '>
+            <span className='flex items-center space-x-2'>
               {title} <RiArrowDropDownLine size={20} className='text-primary' />
             </span>
           ) : (
@@ -57,7 +58,7 @@ function CustomMenu({ items, onItemClick, title, icon }: Props) {
               display: "block",
               position: "absolute",
               top: 0,
-              right: 14,
+              right: 20,
               width: 10,
               height: 10,
               bgcolor: "background.paper",
@@ -73,7 +74,7 @@ function CustomMenu({ items, onItemClick, title, icon }: Props) {
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}>
-        CustomMenu
+        <div className='p-4'>{children}</div>
       </Menu>
     </div>
   );

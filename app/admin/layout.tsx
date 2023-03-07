@@ -9,15 +9,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 relative'>
-        <div className='hidden md:block min-h-full bg-[#EDF1D6] relative'>
+      <body className='grid grid-cols-1 lg:grid-cols-6 relative'>
+        <div className='hidden lg:block min-h-full bg-[#EDF1D6] relative'>
           <SideBar />
         </div>
-        <div className='md:col-span-3 lg:col-span-5 min-w-full'>
+        <div className='lg:col-span-5 min-w-full'>
           <div className=''>
             <DashboardAppBar />
           </div>
-          <div className='py-8 lg:py-12'>{children}</div>
+          <div className='py-8 lg:py-12 px-4 container mx-auto md:px-8 lg:px-12 2xl:px-36'>
+            {children}
+          </div>
         </div>
       </body>
     </html>

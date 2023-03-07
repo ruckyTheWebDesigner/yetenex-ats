@@ -19,7 +19,7 @@ function LatestEpisode() {
           }
           loading='lazy'
           height={200}
-          width={300}
+          width={700}
           alt={""}
         />
       </div>

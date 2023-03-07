@@ -1,10 +1,11 @@
 "use client";
 
-import { Card, Rating } from "@mui/material";
+import { Rating } from "@mui/material";
 import React from "react";
 import { CiInboxIn } from "react-icons/ci";
 import { ImBlocked } from "react-icons/im";
 import { BiSearchAlt2 } from "react-icons/bi";
+import Card from "../../shared/Card";
 
 function JobCard() {
   return (
@@ -32,7 +33,7 @@ function JobCard() {
           </h6>
         </div>
 
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center space-x-4'>
           <span className='flex items-center space-x-2'>
             <CiInboxIn color='' />
             <span className='font-semibold'>3</span>

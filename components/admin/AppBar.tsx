@@ -3,7 +3,6 @@ import React from "react";
 import Search from "./Search";
 
 import AppBar from "@mui/material/AppBar";
-
 import { BiMenu, BiBell } from "react-icons/bi";
 import Badge from "../shared/Badge";
 import Tooltip from "../shared/Tooltip";
@@ -16,16 +15,18 @@ import {
 
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Drawer } from "@mui/material";
+import Menu from "../shared/Menu";
+
 import CustomAvatar from "../shared/Avatar";
 import SideBar from "./SideBar";
 
 export default function Appbar() {
   return (
     <>
-      <div className='hidden md:block'>
+      <div className='hidden lg:block'>
         <DesktopAppbBar />
       </div>
-      <div className='block md:hidden'>
+      <div className='block lg:hidden'>
         <MobileAppbBar />
       </div>
     </>
@@ -86,8 +87,8 @@ function DesktopAppbBar() {
           <Search />
         </div>
 
-        <div className='flex items-center gap-10 lg:gap-12'>
-          <div className='flex items-center gap-6'>
+        <div className='flex items-center space-x-12'>
+          <div className='flex items-center space-x-5'>
             <Tooltip title='Inbox'>
               <Badge badgeContent={4} color='primary'>
                 <AiOutlineMail
@@ -119,8 +120,8 @@ function DesktopAppbBar() {
             </Tooltip>
           </div>
 
-          <Tooltip title='settings'>
-            <div className='flex items-center space-x-1 cursor-pointer'>
+          <Menu
+            title={
               <CustomAvatar
                 sx={{
                   width: 35,
@@ -130,10 +131,9 @@ function DesktopAppbBar() {
                   "https://images.pexels.com/photos/943235/pexels-photo-943235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 }
               />
-
-              <RiArrowDropDownLine size={20} className='text-primary' />
-            </div>
-          </Tooltip>
+            }>
+            <div>hello world</div>
+          </Menu>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "@/components/shared/Container";
 import Greeting from "@/components/admin/dashboard/Greeting";
 import BadgeCard from "@/components/admin/dashboard/BadgeCard";
 import LatestJobs from "@/components/admin/dashboard/LatestJobs";
@@ -16,8 +15,8 @@ export const metadata = {
 function Dashboard() {
   return (
     <div className=''>
-      <Container maxWidth='lg' className='grid grid-cols-7 gap-6 md:gap-8'>
-        <div className='col-span-5'>
+      <div className='grid grid-cols-1 lg:grid-cols-7 gap-6 md:gap-8'>
+        <div className='lg:col-span-5'>
           <div className='grid gap-6 lg:gap-8'>
             <Greeting />
             <BadgeCard />
@@ -26,14 +25,14 @@ function Dashboard() {
           </div>
         </div>
 
-        <div className='col-span-2'>
+        <div className='lg:col-span-2'>
           <div className='grid gap-6 lg:gap-8'>
             <Interviews />
             <Notifications />
             <LatestEpisode />
           </div>
         </div>
-      </Container>
+      </div>
     </div>
   );
 }
